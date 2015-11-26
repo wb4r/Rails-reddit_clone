@@ -1,5 +1,42 @@
-<%= render 'shared/content_title', title: 'All Posts' %>
+<% if logged_in? %>
+  <%= render 'shared/content_title', title: 'All Posts' %>
+<% end %>
 
-<% @posts.each do |post| %>
-  <%= render 'post', post: post %>
+<% if logged_in? %>
+  <% @posts.each do |post| %>
+    <%= render 'post', post: post %>
+  <% end %>
+<% else %>
+  <br><br><br><br>
+  <div class="well well-intro" style="background-colour: orange;">
+    <h2>Welcome!</h2>
+    <hr>
+    <br>
+    <p>This is my clone of the famous www.reddit.com website. IT is built in Rails
+    without relying on scaffolding or in any external libraries or gems.</p>
+    <br>
+    <p><b>Features:</b></p>
+    <ul>
+      <li>Built with Ruby 2 and Rails 4</li>
+      <li>Create and edit posts</li>
+      <li>Comment and vote on posts</li>
+      <li>Authentication</li>
+      <li>Tracks who created every comment, vote, and post</li>
+      <li>Organize posts by category</li>
+      <li>View and edit user profiles</li>
+      <li>Uses roles to allow admins to edit all posts</li>
+      <li>Uses ajax to vote</li>
+      <li>Slugs as URLs</li>
+      <li>Display time based on user specified time zone</li>
+      <li>Deployed to Heroku</li>
+      <li>Uses gem to extract common logic</li>
+    </ul>
+    <br>
+    <p><b>Next:</b></p>
+    <ul>
+      <li>2-factor authentication: cellphone authentication</li>
+      <li>Create and publish my own rubygem</li>
+      <li>AJAXify main User functions</li>
+    </ul>
+  </div>
 <% end %>

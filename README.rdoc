@@ -2,14 +2,25 @@
 
 Build from scratch a clone of the popular news sharing site Reddit using Ruby on Rails.
 
-== FINAL EXAMPLE
-
-An example of the final project can be found here => http://tl-postit.herokuapp.com
-
-== METHODOLOGY
+== METHODOLOGY AND FEATURES
 
 The application will be built without using scaffoling and respecting Rails conventions hardcoding the whole app.
 
-== DETAILED SYLLABUS
 
-Can be found here => www.gotealeaf.com/curriculum#!rails
+Features:
+
+    - Built with Ruby 2 and Rails 4
+    - Create and edit posts
+    - Comment and vote on posts
+    - Authentication
+    - Tracks who created every comment, vote, and post
+    - Organize posts by category
+    - View and edit user profiles
+    - Uses roles to allow admins to edit all posts
+    - Uses ajax to vote
+    - Slugs as URLs
+    - Display time based on user specified time zone
+    - Deployed to Heroku
+    - Uses gem to extract common logic
+    - 2-factor authentication
+

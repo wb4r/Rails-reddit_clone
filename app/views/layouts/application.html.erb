@@ -7,8 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href='https://fonts.googleapis.com/css?family=Cinzel:400,700,900' rel='application' type='text/css'>
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    
     <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
