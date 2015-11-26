@@ -14,15 +14,18 @@
 
   <div class="span7 well">
     <%= render post.categories %>
+    <br><br>
     <h4><%= link_to post.title, fix_url(post.url) %></h4>  <!-- post_path(post) -->
     <p><%= post.description %></p>
-    <p>                                       
+    <p>    
+      <hr class="hr_post">                                   
       <span class="quiet">posted by</span> <%= link_to post.creator.username, user_path(post.creator) %>
       <small>at <%= display_datetime(post.created_at) %></small>
+      <small class="comments_on_post"><%= link_to("#{post.comments.size} comments", post_path(post)) %></small>
     </p>
     <small>
     <span>
-      <%= link_to("#{post.comments.size} comments", post_path(post)) %>
+      
     </span>
     </small>
   </div>

@@ -59,8 +59,76 @@ div.comment_votes {
 
 .nav {
   font-color: #FF9900;
-}
+}p
+
+
+
+
 
 .icon-plus {
   color: #FF9900;
+}
+
+.myapp {
+  font-size: 1.2em;
+}
+
+.lead-title {
+  font-size: 1.3em;
+  margin-top: 35px;
+}
+
+.navbar .nav > li > a.brand {
+  font-size: 1.6em;
+  colour: orange;
+  margin-right: 230px;
+  margin-left: -110px;
+}
+
+.navbar .nav > li > a.brand {
+  color: orange;
+  font-family: 'Cinzel';
+}
+
+.navbar .nav > li > a.brand:hover {
+  color: #0088cc;
+}
+
+.navbar .navbar-inner {
+  height: 60px;
+}
+
+.navbar .navbar-inner .container {
+  margin-top: 11px;
+}
+
+.space_under_lead_title {
+  min-height: 50px;
+}
+
+.icon-plus {
+  color: orange;
+}
+
+.dropdown-menu > li > a {
+  color: orange;
+}
+
+.badge {
+  margin-left: 10px;
+}
+
+.hr_post {
+  border-color: #cccddd -moz-use-text-color white;
+  border-image: none;
+  border-style: solid;
+  border-width: 1px 0;
+}
+
+.comments_on_post {
+  float: right;
+}
+
+.well {
+  padding-bottom: -15px !important;
 }

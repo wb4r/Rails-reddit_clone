@@ -6,6 +6,7 @@
     <title>Willem Toledano - Reddit Clone</title>
     <meta name="description" content="">
     <meta name="author" content="">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel:400,700,900' rel='application' type='text/css'>
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -24,7 +25,7 @@
     <div id="main" role="main">
       <div class="container">
          <div class="row">
-          <div class="span9">
+          <div class="span9 myapp">
             <%= render 'layouts/messages' %>
             <%= yield %>
           </div>

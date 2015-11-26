@@ -12,6 +12,7 @@
 <p><strong>Post's url:</strong> <%= @post.url %> </p>
 <hr>
 
+
 <% if logged_in? %>
   <%= form_for [@post, @comment] do |f| %>
     <% render 'shared/errors', obj: @comment %>

@@ -4,8 +4,8 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(params.require(:comment).permit(:body))     
-    @comment.creator = current_user
     # @comment = @post.comments.build(params.require(:comment).permit!)
+    @comment.creator = current_user
     # @comment.creator = User.first # DELETE LATER!
     # @comment = Comment.new(params.require(:comment).permit!)
     # @comment.post = @post
@@ -14,7 +14,9 @@ class CommentsController < ApplicationController
       flash[:notice] = "Your comment was added"
       redirect_to post_path(@post)
     else
-      render '/posts/show'
+      # render '/posts/show'
+      flash[:error] = "You have to write few things in the comment box."
+      redirect_to post_path(@post)
     end
   end
 
