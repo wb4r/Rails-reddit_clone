@@ -1,14 +1,16 @@
-<%= render 'shared/content_title', title: "Profile: #{@user.username}" %>
+<%= render 'shared/content_title', title: "Profile: #{@user.username.capitalize}" %>
 
 <div class="well">
   <dl class="dl-horizontal">
     <dt>Username:</dt>
-    <dd><%=@user.username %></dd>
+    <dd><%=@user.slug %></dd>
+    <dt>Time zone:</dt>
+    <dd><%= @user.time_zone %> </dd>
   </dl>
 </div>
 
 <br><br>
-<h4><%= @user.username.capitalize %>'s Activity</h4>
+<h4><%= @user.slug.capitalize %>'s Activity</h4>
 <br>
 <ul class="nav nav-tabs">
   <li class='<%= 'active' if params[:tab].nil? %>'>

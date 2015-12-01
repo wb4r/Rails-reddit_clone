@@ -4,10 +4,15 @@ module ApplicationHelper
   end
 
   def display_datetime(dt)
-    Time.zone = "Edinburgh"
-    dt.strftime("%d/%m/%Y %l:%M%P %Z") # 03/14/2014 9:09pm
+
+    if logged_in? && !current_user.time_zone.blank?
+      dt = dt.in_time_zone(current_user.time_zone)
+    end
     
+    # Time.zone = "Edinburgh"
+    dt.strftime("%d/%m/%Y %l:%M%P %Z") # 03/14/2014 9:09pm
   end
+
   def fix_url(str)
     str.starts_with?('http://') ? str : "http://#{str}"
   end

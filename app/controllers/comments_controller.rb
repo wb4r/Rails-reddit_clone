@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :require_user
 
   def create
-    @post = Post.find(params[:post_id])
+    @post = Post.find_by slug: params[:post_id]
     @comment = @post.comments.build(params.require(:comment).permit(:body))     
     # @comment = @post.comments.build(params.require(:comment).permit!)
     @comment.creator = current_user
@@ -22,19 +22,24 @@ class CommentsController < ApplicationController
 
   def vote
     @comment = Comment.find(params[:id])
-    vote = Vote.create(voteable: @comment, creator: current_user, vote: params[:vote], )
+    @vote = Vote.create(voteable: @comment, creator: current_user, vote: params[:vote], )
 
     if current_user
-      if vote.valid?
-        flash[:notice] = "Your vote was counted on that comment."
-      else
-        flash[:error] = 'You can only vote once on a comment'
+      respond_to do |format|
+        format.html do 
+          if @vote.valid?
+            flash[:notice] = "Your vote was counted on that comment."
+          else
+            flash[:error] = 'You can only vote once on a comment'
+          end
+          redirect_to :back
+        end
+        format.js
       end
-
-      redirect_to :back
     else
       flash[:alert] = "You must log in to vote"
       redirect_to root_path
     end
   end
+      
 end

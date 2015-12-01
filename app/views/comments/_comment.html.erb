@@ -11,13 +11,13 @@
     <% end %>    
   </div>
   <div class="span0 well text-center">
-    <%= link_to vote_post_comment_path(comment.post, comment, vote: true), method: 'post' do %>
+    <%= link_to vote_post_comment_path(comment.post, comment, vote: true), method: 'post', remote: true do %>
       <i class="icon-arrow-up"></i>
     <% end %>
     <br>
-    <p style="font-size: 0.7rem; margin-bottom: -30px; margin-top: -6px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= comment.total_votes %></p>
+    <p id="comment_<%=comment.id%>_votes" style="font-size: 0.7rem; margin-bottom: -30px; margin-top: -6px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= comment.total_votes %></p>
     <br>
-    <%= link_to vote_post_comment_path(comment.post, comment, vote: false), method: 'post' do %>
+    <%= link_to vote_post_comment_path(comment.post, comment, vote: false), method: 'post', remote: true do %>
       <i class="icon-arrow-down"style="margin-right: 1px;"></i>
     <% end %>
   </div>

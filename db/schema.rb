@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151123184223) do
+ActiveRecord::Schema.define(version: 20151201172703) do
 
-  create_table "categories", force: true do |t|
-    t.string "name"
-  end
+# Could not dump table "categories" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "comments", force: true do |t|
     t.text     "body"
@@ -30,20 +29,11 @@ ActiveRecord::Schema.define(version: 20151123184223) do
     t.integer "post_id"
   end
 
-  create_table "posts", force: true do |t|
-    t.string   "url"
-    t.string   "title"
-    t.text     "description"
-    t.integer  "user_id"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "posts" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
-  create_table "users", force: true do |t|
-    t.string "username"
-    t.string "password_digest"
-  end
+# Could not dump table "users" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "votes", force: true do |t|
     t.boolean  "vote"

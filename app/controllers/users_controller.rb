@@ -20,28 +20,29 @@ class UsersController < ApplicationController
       flash[:alert] = "Error while register."
       render :new
     end
+  end
 
-    def edit
-    end
+  def edit
+  end
 
-    def update
-      if @user.update(user_params)
-        flash[:notice] = "You:noticer profile was updated"
-        redirect_to user_path(@user)
-      else
-        render :edit
-      end
+  def update
+    if @user.update(user_params)
+      flash.now[:notice] = "Your profile was updated"
+      render :edit
+    else
+      flash.now[:alert] = "Error on saving changes."
+      render :edit
     end
   end
 
   private
 
   def user_params
-    params.require(:user) .permit(:username, :password)
+    params.require(:user).permit(:username, :password, :time_zone, :phone)
   end
 
   def set_user
-    @user = User.find(params[:id])    
+    @user = User.find_by slug: params[:id]
   end
 
   def require_same_user

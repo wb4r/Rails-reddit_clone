@@ -9,6 +9,17 @@
       <%= f.label :password %>
       <%= f.password_field :password %>
     </div>
+    <div class="control-group">
+      <%= f.label :time_zone %>
+      <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.all.sort, default: Time.zone.name %>
+    </div>
+    <div class="control-group">
+      <%= f.label :phone, "Phone Number <small>(UK numbers only)</small>".html_safe%>
+      <%= f.text_field :phone, maxlength: 11%>
+      <%= link_to '#', id: 'two_factor_phone' do %>
+        <i class="icon-question-sign"></i>
+      <% end %>
+    </div>
     <% if logged_in? %>
       <%= f.submit "Update Profile", class: 'btn btn-warning' %>
     <% else %>
